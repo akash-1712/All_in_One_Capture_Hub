@@ -14,6 +14,8 @@ const Audio = () => (
           {console.log(status)}
           {status === "stopped" ? (
             <audio src={mediaBlobUrl} controls className={styles.preview} />
+          ) : status === "recording" ? (
+            <h1>Recoding.....</h1>
           ) : null}
 
           <div className={styles.container_btn}>

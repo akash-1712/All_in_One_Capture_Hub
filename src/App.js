@@ -10,7 +10,7 @@ import Login from "./Components/pages/Login/Login";
 import Signup from "./Components/pages/signup/signup";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUser } from "./store/user-action";
-import { FetchActivityData } from "./store/activity-action";
+// import { FetchActivityData } from "./store/activity-action";
 import { AuthActions } from "./store/auth-slice";
 import WebCam from "./Components/pages/webCam/WebCam";
 import Audio from "./Components/pages/Audio/Audio";
@@ -45,25 +45,25 @@ const getStoredToken = () => {
 };
 
 function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const auth = useSelector((state) => state.Auth);
-  useEffect(() => {
-    dispatch(FetchActivityData(1, auth.isLoggedIn));
-    const tokenData = getStoredToken();
-    if (tokenData.token) {
-      dispatch(
-        AuthActions.login({
-          token: tokenData.token,
-          time: tokenData.duration,
-          timer: setTimeout(() => {
-            // console.log("timeOut");
-            dispatch(AuthActions.logout());
-          }, tokenData.duration),
-        })
-      );
-      dispatch(fetchUser());
-    }
-  }, [dispatch, auth.isLoggedIn]);
+  // useEffect(() => {
+  //   dispatch(FetchActivityData(1, auth.isLoggedIn));
+  //   const tokenData = getStoredToken();
+  //   if (tokenData.token) {
+  //     dispatch(
+  //       AuthActions.login({
+  //         token: tokenData.token,
+  //         time: tokenData.duration,
+  //         timer: setTimeout(() => {
+  //           // console.log("timeOut");
+  //           dispatch(AuthActions.logout());
+  //         }, tokenData.duration),
+  //       })
+  //     );
+  //     dispatch(fetchUser());
+  //   }
+  // }, [dispatch, auth.isLoggedIn]);
 
   const router = createBrowserRouter([
     {
