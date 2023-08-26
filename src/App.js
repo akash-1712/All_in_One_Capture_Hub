@@ -45,25 +45,24 @@ const getStoredToken = () => {
 };
 
 function App() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const auth = useSelector((state) => state.Auth);
-  // useEffect(() => {
-  //   dispatch(FetchActivityData(1, auth.isLoggedIn));
-  //   const tokenData = getStoredToken();
-  //   if (tokenData.token) {
-  //     dispatch(
-  //       AuthActions.login({
-  //         token: tokenData.token,
-  //         time: tokenData.duration,
-  //         timer: setTimeout(() => {
-  //           // console.log("timeOut");
-  //           dispatch(AuthActions.logout());
-  //         }, tokenData.duration),
-  //       })
-  //     );
-  //     dispatch(fetchUser());
-  //   }
-  // }, [dispatch, auth.isLoggedIn]);
+
+  useEffect(() => {
+    const tokenData = getStoredToken();
+    if (tokenData.token) {
+      dispatch(
+        AuthActions.login({
+          token: tokenData.token,
+          time: tokenData.duration,
+          timer: setTimeout(() => {
+            dispatch(AuthActions.logout());
+          }, tokenData.duration),
+        })
+      );
+      dispatch(fetchUser());
+    }
+  }, [dispatch, auth.isLoggedIn]);
 
   const router = createBrowserRouter([
     {
