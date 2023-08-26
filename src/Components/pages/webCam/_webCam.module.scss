@@ -1,0 +1,32 @@
+@import "../../../index.module.scss";
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 2rem;
+
+  &_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+
+    button:hover,
+    button:active {
+      background-color: $LightOrange;
+    }
+  }
+}
+
+.status {
+  font-size: 2rem;
+  color: $LightRed;
+  margin-top: 1rem;
+}
+
+.preview {
+  min-width: 20rem;
+  max-height: 20rem;
+  width: 80%;
+}

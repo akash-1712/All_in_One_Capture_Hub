@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import Card from "../../Utils/Card/Card";
 import styles from "./_login.module.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthActions } from "../../../store/auth-slice";
 import { UserActions } from "../../../store/user-slice";
 import { useState } from "react";

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory, useNavigate } from "react-router-dom";
+import { useNavigate, Redirect } from "react-router-dom";
 import Card from "../../Utils/Card/Card";
 import styles from "./_signup.module.scss";
 import { AuthActions } from "../../../store/auth-slice";
@@ -72,6 +72,7 @@ const Signup = () => {
   }, [backDrop, isFirst, navigate]);
 
   const submitHandler = async (event) => {
+    // navigate("/");
     event.preventDefault();
     dispatch(AuthActions.loading(true));
     const inputUserName = inputName.current.value;
@@ -98,9 +99,10 @@ const Signup = () => {
       setError({ isError: true, errorMessage: resData.message });
       return;
     }
-    // const resData = await response.json();
-    // console.log(resData);
+
+    // console.log("login");
     navigate("/login");
+    window.location.reload();
   };
   return (
     <Card className={styles.card_login}>

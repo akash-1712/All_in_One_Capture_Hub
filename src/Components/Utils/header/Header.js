@@ -6,6 +6,7 @@ import menu from "../../../images/bars-solid.svg";
 import { backDropActions } from "../../../store/backdrop-slice";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import HomePage from "../../pages/HomePage/HomePage";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,8 @@ const Header = () => {
           <img src={timeLogo} alt="react-timeLogo" />
         </div>
       </NavLink>
+
+      <HomePage></HomePage>
 
       <div
         onClick={() => {

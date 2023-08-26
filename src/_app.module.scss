@@ -1,0 +1,21 @@
+@import "./index.module.scss";
+.homePage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+.title {
+  color: $SoftOrange;
+}
+
+p {
+  margin-bottom: 1rem;
+  & span {
+    color: $LightRed;
+  }
+}
+h1 {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}

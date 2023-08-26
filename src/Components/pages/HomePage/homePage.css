@@ -1,0 +1,9 @@
+.active button {
+  background-color: hsl(235, 46%, 20%);
+  color: hsl(236, 100%, 87%);
+}
+
+button:hover {
+  background-color: hsl(235, 46%, 20%);
+  color: hsl(236, 100%, 87%);
+}

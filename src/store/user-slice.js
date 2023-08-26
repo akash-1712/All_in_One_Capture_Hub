@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import jeremy from "../images/image-jeremy.png";
+import jeremy from "../images/profile.png";
 
 const initialUser = {
-  name: "Jeremy Robson",
+  name: "AKASH VERMA",
   image: jeremy,
   egImage: jeremy,
-  egName: "Jeremy Robson",
+  egName: "AKASH VERMA",
 };
 
 const UserSlice = createSlice({
