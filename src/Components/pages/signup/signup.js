@@ -88,10 +88,13 @@ const Signup = () => {
     formData.append("image", imageUrl);
     formData.append("confirmPassword", inputUserConfirmPassword);
     // console.log(imageUrl);
-    const response = await fetch("http://localhost:8080/signup", {
-      method: "POST",
-      body: formData,
-    });
+    const response = await fetch(
+      "https://all-in-one-capture-hub-backend.onrender.com/signup",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
     dispatch(AuthActions.loading(false));
     if (!response.ok) {
       const resData = await response.json();

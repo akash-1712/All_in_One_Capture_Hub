@@ -46,16 +46,19 @@ const Login = () => {
       dispatch(AuthActions.loading(true));
       const inputUserEmail = inputEmail.current.value;
       const inputUserPassword = inputPassword.current.value;
-      const response = await fetch("http://localhost:8080/login", {
-        method: "POST",
-        body: JSON.stringify({
-          email: inputUserEmail,
-          password: inputUserPassword,
-        }),
-        headers: {
-          "content-type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://all-in-one-capture-hub-backend.onrender.com/login",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            email: inputUserEmail,
+            password: inputUserPassword,
+          }),
+          headers: {
+            "content-type": "application/json",
+          },
+        }
+      );
 
       dispatch(AuthActions.loading(false));
 
@@ -79,7 +82,9 @@ const Login = () => {
         })
       );
       // console.log(resData);
-      const image = "http://localhost:8080/" + resData.imageUrl;
+      const image =
+        "https://all-in-one-capture-hub-backend.onrender.com/" +
+        resData.imageUrl;
       // console.log(image);
       dispatch(
         UserActions.replaceUser({
